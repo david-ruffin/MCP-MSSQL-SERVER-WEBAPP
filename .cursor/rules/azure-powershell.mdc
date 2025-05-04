@@ -1,0 +1,11 @@
+type: auto_attached
+pattern: "**/*.ps1"
+name: PowerShell / Azure Standards
+
+- For any Azure script or task:
+  - Do not use the deprecated `AzureAD` module.
+  - Always use the `Az` module (`Connect-AzAccount`, etc.).
+  - Any recommendation must include at least 2 verifiable external sources with valid URLs.
+
+- Prioritize automation over manual steps. If a step can be handled via Azure CLI or PowerShell automation, do so.
+

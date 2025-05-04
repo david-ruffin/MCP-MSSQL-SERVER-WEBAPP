@@ -1,0 +1,14 @@
+type: always
+name: Project Initialization
+
+rules:
+  - description: "At project start, check if @roadmap.txt exists. If missing, create it."
+  - description: "Prompt the user to define a specific, measurable GOAL (e.g., 'Deliver a secure REST API with user authentication, deployed to production, passing all tests')."
+  - description: "After receiving the GOAL, write it as the first line in @roadmap.txt"
+  - description: "Below the GOAL, list tasks and milestones. Each task must include:"
+  - description: "- A clear outcome (e.g., 'Implement /login endpoint with JWT support')"
+  - description: "- A test requirement (e.g., 'Must pass test_auth.py::test_login_success')"
+  - description: "- A linting requirement (e.g., 'flake8 must return no errors on auth.py')"
+  - description: "Track task completion status in @roadmap.txt using checkboxes (e.g., '- [ ] Task description')"
+  - description: "Do not begin coding until the GOAL and tasks are defined in @roadmap.txt"
+
