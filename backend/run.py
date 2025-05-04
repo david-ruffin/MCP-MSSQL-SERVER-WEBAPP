@@ -1,12 +1,14 @@
-#!/usr/bin/env python3
-import sys
+import uvicorn
 import os
+from dotenv import load_dotenv
 
-# Add the parent directory to the path so we can import the app package
-sys.path.append(os.path.dirname(os.path.abspath(__file__)))
-
-from app.api import start_server
+# Load environment variables
+load_dotenv()
 
 if __name__ == "__main__":
-    print("Starting SQL Chat API server...")
-    start_server() 
+    uvicorn.run(
+        "app.api:app",
+        host=os.getenv("HOST", "0.0.0.0"),
+        port=int(os.getenv("PORT", 8000)),
+        reload=os.getenv("DEBUG", "False").lower() == "true"
+    )

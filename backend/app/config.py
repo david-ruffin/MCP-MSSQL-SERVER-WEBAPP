@@ -1,17 +1,17 @@
 import os
 from dotenv import load_dotenv
 
-# Load environment variables
+# Load environment variables from .env file
 load_dotenv()
 
-# Web server settings
-PORT = int(os.getenv("PORT", 8000))
-HOST = os.getenv("HOST", "0.0.0.0")
-DEBUG = os.getenv("DEBUG", "True").lower() in ["true", "1", "yes"]
+# Database configuration
+DATABASE_CONFIG = {
+    "server": os.getenv("MSSQL_SERVER"),
+    "database": os.getenv("MSSQL_DATABASE"),
+    "user": os.getenv("MSSQL_USER"),
+    "password": os.getenv("MSSQL_PASSWORD"),
+    "driver": os.getenv("MSSQL_DRIVER", "{ODBC Driver 17 for SQL Server}")
+}
 
-# Database settings
-MSSQL_SERVER = os.getenv("MSSQL_SERVER")
-MSSQL_DATABASE = os.getenv("MSSQL_DATABASE")
-MSSQL_USER = os.getenv("MSSQL_USER")
-MSSQL_PASSWORD = os.getenv("MSSQL_PASSWORD")
-MSSQL_DRIVER = os.getenv("MSSQL_DRIVER")
+# API configuration
+ANTHROPIC_API_KEY = os.getenv("ANTHROPIC_API_KEY")
